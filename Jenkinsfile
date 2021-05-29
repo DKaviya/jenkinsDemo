@@ -14,4 +14,5 @@ pipeline{
         sh './build-project.sh' false
         }
     }
+ }
 }
