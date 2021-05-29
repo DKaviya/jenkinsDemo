@@ -20,5 +20,5 @@ pipeline{
                 bat "mvn deploy"
         }
     }
-
+	}
 }
