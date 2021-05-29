@@ -4,9 +4,10 @@ pipeline{
 
 	stages {
         stage('Building Projects') {
-            steps {
-                bat "mvn clean install" 
-             }
+            withMaven(maven: 'maven_3_8_1') {
+                    sh 'mvn clean install'
+
+                }
          }
 
     }
