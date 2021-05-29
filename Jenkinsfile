@@ -4,15 +4,21 @@ pipeline{
 
 	stages {
         stage('Building Projects') {
-            agent {
-                node {label 'Docker-builder'}
-        }
-        steps{
-        sh 'export'
-        
-        sh 'chmod 755 ./build-project.sh'
-        sh './build-project.sh' false
+            steps {
+                bat "mvn clean compile" 
         }
     }
- }
+
+         stage('testing stage') {
+             steps {
+                bat "mvn test"
+        }
+    }
+
+          stage('deployment stage') {
+              steps {
+                bat "mvn deploy"
+        }
+    }
+
 }
