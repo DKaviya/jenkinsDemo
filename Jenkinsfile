@@ -14,7 +14,7 @@ pipeline{
          }
         stage('Building Docker  Image') {
 		steps {
-			bat "docker build -t aharanbijju/service2:${buildBumber} ."
+			bat "docker build -t aharanbijju/service2:${buildNumber} ."
 		}
          }
 
